@@ -1,16 +1,12 @@
 class Foo < Formula
   desc "this is foo"
   homepage "http://github.com/bassaer/homebrew-foo"
-  url "http://github.com/bassaer/homebrew-foo/foo-0.0.1.tar.gz"
-  sha256 ""
+  url "https://github.com/bassaer/homebrew-foo/releases/download/0.0.1/foo.tar.gz"
+  sha256 "c582cc766333a9fe28b604698f9730bf04a6091f327d9679ba14a28490aa4499"
   license "MIT"
 
   def install
-    system "./configure", "--disable-debug",
-                          "--disable-dependency-tracking",
-                          "--disable-silent-rules",
-                          "--prefix=#{prefix}"
-    # system "cmake", ".", *std_cmake_args
+      bin.install 'foo'
   end
 
   test do
